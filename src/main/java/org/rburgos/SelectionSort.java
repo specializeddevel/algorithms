@@ -2,6 +2,7 @@ package org.rburgos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class SelectionSort {
 
@@ -9,6 +10,7 @@ public class SelectionSort {
     Integer originalarrayLenght;
 
     public static void main(String[] args) {
+
         SelectionSort selectionSort = new SelectionSort(List.of(6,4,5,3,1,2,8));
         List<Integer> ordenadoSelection = selectionSort.sortArray();
         System.out.println(ordenadoSelection);
@@ -28,6 +30,7 @@ public class SelectionSort {
             System.out.println(this.copiedArray);
             System.out.println(newArray);
             System.out.println("****************************************");
+            
         }
         return newArray;
     }
@@ -35,7 +38,7 @@ public class SelectionSort {
     private Integer findSmallPosition(List<Integer> array) {
         int min = array.get(0);
         int position = 0;
-        for(int i = 0; i < array.size(); i++) {
+        for(int i = 1; i < array.size(); i++) {
             if (array.get(i) < min) {
                 min = array.get(i);
                 position = i;
@@ -43,7 +46,6 @@ public class SelectionSort {
         }
         return position;
     }
-
 
 }
 
